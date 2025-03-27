@@ -4,4 +4,5 @@ export const params = {
     DB_NAME:process.env.DB_NAME || "nkloqzcz_FreelansHub",
     DB_USER:process.env.DB_USER || "AlexBram",
     DB_PASSWORD:process.env.DB_PASSWORD || "Dinger_Boom_007",
+    REACT_APP_API_URL: process.env || "https://www.freelanshub.com.ua"
 }

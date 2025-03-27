@@ -39,7 +39,6 @@ Thumbs.db
 *.swp
 
 # Сборка и зависимости
-dist/
 build/
 out/
 
