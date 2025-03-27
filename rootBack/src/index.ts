@@ -2,7 +2,7 @@
 import { app } from './app';
 import { connectDB } from './repositories/db';
 
-const PORT = 8080;
+const PORT = process.env.PORT;
 
 // Підключення до бази даних перед стартом сервера
 const startServer = async () => {
