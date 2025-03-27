@@ -45,7 +45,6 @@ out/
 
 # Пакеты и зависимости
 *.lock
-package-lock.json
 yarn.lock
 pip-log.txt
 pip-delete-this-directory.txt
@@ -69,5 +68,3 @@ coverage/
 *.conf
 *.cfg
 *.ini
-*.json
-config.json
