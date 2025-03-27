@@ -1,18 +1,17 @@
 
 import jwt from "jsonwebtoken";
 import { UserType } from "../repositories/userRepository";
-import { params } from "../params";
 
 export const jwtService = {
     async createJWT(user:UserType):Promise<string>{
-        const token = jwt.sign({userId:user.id}, params.JWT_SICRET, {expiresIn:"24h"});
+        const token = jwt.sign({userId:user.id}, "1234", {expiresIn:"24h"});
         return token;
     },
     
     async getUserIdByToken(token: string): Promise<string | null> {
         try {
             // Замените `YOUR_SECRET_KEY` на ваш фактический секретный ключ
-            const secretKey = params.JWT_SICRET; 
+            const secretKey = "1234"; 
     
             // Расшифровываем токен
             const decoded = jwt.verify(token, secretKey) as { userId: string };

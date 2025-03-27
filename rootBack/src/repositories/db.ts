@@ -1,17 +1,12 @@
 import fs from 'fs';
 import mysql from 'mysql2/promise';
 
-const dbHost = process.env.DB_HOST
-const dbName = process.env.DB_NAME;
-const dbUser = process.env.DB_USER;
-const dbPassword = process.env.DB_PASSWORD;
-
 const db = mysql.createPool({
-    host: dbHost,
+    host: 'rocket-da2.hostsila.org',
     port: 3306,
-    user: dbUser,
-    password: dbPassword,
-    database: dbName,
+    user: "nkloqzcz_AlexBram",
+    password: "Dinger_Boom_007",
+    database: "nkloqzcz_FreelansHub",
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0,
