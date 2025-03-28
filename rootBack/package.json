@@ -8,7 +8,7 @@
   "license": "ISC",
   "type": "commonjs",
   "scripts": {
-    "start": "ts-node src/index.js",
+    "start": "ts-node dist/index.js",
     "dev": "nodemon src/index.ts"
   },
   "dependencies": {
