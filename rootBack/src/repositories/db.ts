@@ -1,12 +1,12 @@
 import fs from 'fs';
 import mysql from 'mysql2/promise';
+import { params } from '../params';
 
 const db = mysql.createPool({
-    host: 'rocket-da2.hostsila.org',
-    port: 3306,
-    user: "nkloqzcz_AlexBram",
-    password: "Dinger_Boom_007",
-    database: "nkloqzcz_FreelansHub",
+    host: params.DB_HOST,
+    user: params.DB_USER,
+    password: params.DB_PASS,
+    database: params.DB_NAME,
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0,

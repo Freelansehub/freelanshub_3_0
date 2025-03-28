@@ -11,7 +11,7 @@ const authRoutes_1 = __importDefault(require("./aplication/routes/authRoutes"));
 const app = (0, express_1.default)();
 exports.app = app;
 app.use((0, cors_1.default)({
-    origin: process.env.REACT_APP_API_URL, // Разрешите запросы с конкретного клиента
+    origin: "https://www.freelanshub.com.ua", // Разрешите запросы с конкретного клиента
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'], // Разрешенные методы
     credentials: true, // Если нужно передавать куки
 }));

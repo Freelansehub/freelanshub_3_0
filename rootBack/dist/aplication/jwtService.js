@@ -14,11 +14,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.jwtService = void 0;
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
-const params_1 = require("../params");
 exports.jwtService = {
     createJWT(user) {
         return __awaiter(this, void 0, void 0, function* () {
-            const token = jsonwebtoken_1.default.sign({ userId: user.id }, params_1.params.JWT_SICRET, { expiresIn: "24h" });
+            const token = jsonwebtoken_1.default.sign({ userId: user.id }, "1234", { expiresIn: "24h" });
             return token;
         });
     },
@@ -26,7 +25,7 @@ exports.jwtService = {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 // Замените `YOUR_SECRET_KEY` на ваш фактический секретный ключ
-                const secretKey = params_1.params.JWT_SICRET;
+                const secretKey = "1234";
                 // Расшифровываем токен
                 const decoded = jsonwebtoken_1.default.verify(token, secretKey);
                 // Проверяем, содержит ли декодированный объект `userId`

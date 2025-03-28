@@ -14,12 +14,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.connectDB = void 0;
 const promise_1 = __importDefault(require("mysql2/promise"));
+const params_1 = require("../params");
 const db = promise_1.default.createPool({
-    host: 'rocket-da2.hostsila.org',
-    port: 3306,
-    user: "nkloqzcz_AlexBram",
-    password: "Dinger_Boom_007",
-    database: "nkloqzcz_FreelansHub",
+    host: params_1.params.DB_HOST,
+    user: params_1.params.DB_USER,
+    password: params_1.params.DB_PASS,
+    database: params_1.params.DB_NAME,
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0,
