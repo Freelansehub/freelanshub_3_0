@@ -1,4 +1,5 @@
-require('dotenv').config();
+import dotenv from 'dotenv';
+dotenv.config();
 
 export const params = {
     DB_HOST: process.env.DB_HOST || "rocket-da2.hostsila.org",
@@ -7,3 +8,5 @@ export const params = {
     DB_NAME: process.env.DB_NAME || "nkloqzcz_FreelansHub",
     PORT: Number(process.env.PORT) || 3306
 }
+
+console.log("DATABASE CONFIG:", params);

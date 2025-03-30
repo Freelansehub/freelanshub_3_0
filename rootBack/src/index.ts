@@ -8,7 +8,7 @@ import { connectDB } from './repositories/db';
 const startServer = async () => {
     await connectDB();
 
-    app.listen(8080, () => {
+    app.listen(params.PORT, () => {
         console.log(`🚀 Сервер працює на http://localhost:${8080}`);
     });
 };
