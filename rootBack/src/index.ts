@@ -9,7 +9,7 @@ const startServer = async () => {
     await connectDB();
 
     app.listen(params.PORT, () => {
-        console.log(`🚀 Сервер працює на http://localhost:${8080}`);
+        console.log(`🚀 Сервер працює на http://localhost:${params.PORT}`);
     });
 };
 

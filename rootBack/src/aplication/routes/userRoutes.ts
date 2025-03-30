@@ -62,7 +62,7 @@ router.get('/user', async (req: Request, res: Response) => {
             // Виконуємо запит до бази
         const [rows] = await connection.query<UserDbType[]>(query);
 
-        res.send({
+        res.status(200).send({
             rows
         })
     }
