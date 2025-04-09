@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import HeaderContainer from "../components/Header/HeaderContainer";
+import Footer from "../components/Footer/Footer";
 
 export default function Layout(): React.ReactElement {
 
@@ -9,6 +10,7 @@ export default function Layout(): React.ReactElement {
       <main data-testid='main-container' className="content">
         <Outlet />
       </main>
+      <Footer />
     </>
   );
 }

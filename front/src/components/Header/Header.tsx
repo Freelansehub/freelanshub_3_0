@@ -20,8 +20,9 @@ export default function Header({ ...props }: HeaderPropsType): React.ReactElemen
                     </NavLink>
 
                     <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                        <li><NavLink to="/" data-testid="home-link" className="nav-link px-2 text-white">Головна</NavLink></li>
                         <li><NavLink to="/" data-testid="home-link" className="nav-link px-2 text-white">Цінова політика</NavLink></li>
-                        <li><NavLink to="/login" data-testid="login-link" className="nav-link px-2 text-white">Політика конфеденційності</NavLink></li>
+                        <li><NavLink to="/privacy-policy" data-testid="login-link" className="nav-link px-2 text-white">Політика конфеденційності</NavLink></li>
                         <li><NavLink to="/saport" data-testid="saport-link" className="nav-link px-2 text-white">Служба підтримки</NavLink></li>
                     </ul>
 
