@@ -7,25 +7,25 @@ export default function kabinetClient() : React.ReactElement {
   <div className="list-group list-group-checkable d-grid gap-2 border-0">
     <input className="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios1" value="" />
     <label className="list-group-item rounded-3 py-3" htmlFor="listGroupCheckableRadios1">
-      
+      Всі замовлення
       <span className="d-block small opacity-50">With support text underneath to add more detail</span>
     </label>
 
     <input className="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios2" value=""/>
     <label className="list-group-item rounded-3 py-3" htmlFor="listGroupCheckableRadios2">
-      Second radio
+      Вільні
       <span className="d-block small opacity-50">Some other text goes here</span>
     </label>
 
     <input className="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios3" value=""/>
     <label className="list-group-item rounded-3 py-3" htmlFor="listGroupCheckableRadios3">
-      Third radio
+      На виконанні
       <span className="d-block small opacity-50">And we end with another snippet of text</span>
     </label>
 
     <input className="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios4" value="" />
     <label className="list-group-item rounded-3 py-3" htmlFor="listGroupCheckableRadios4">
-      Fourth disabled radio
+      Виконанні
       <span className="d-block small opacity-50">This option is disabled</span>
     </label>
   </div>
