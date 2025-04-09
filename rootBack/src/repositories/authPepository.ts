@@ -8,20 +8,22 @@ export class AuthRepository {
         email: string;
         password: string;
         phone: string;
+        role: string;
     }): Promise<UserType> {
         try {
+            console.log(newUser.name, newUser.email, newUser.password, newUser.phone, newUser.role)
             const connection = await db.getConnection();
             const [result] = await connection.query<ResultSetHeader>(
-                `INSERT INTO users (name, email, password, phone) VALUES (?, ?, ?, ?)`,
-                [newUser.name, newUser.email, newUser.password, newUser.phone]
+                `INSERT INTO user (name, email, password, phone, role) VALUES (?, ?, ?, ?, ?)`,
+                [newUser.name, newUser.email, newUser.password, newUser.phone, newUser.role]
             );
-
+            console.log("result: ",result)
             if (!result.insertId) {
                 throw new Error("Не вдалося створити користувача");
             }
 
             const [user] = await connection.query<UserDbType[]>(
-                `SELECT * FROM users WHERE id = ?`,
+                `SELECT * FROM user WHERE id = ?`,
                 [result.insertId]
             );
 

@@ -15,7 +15,14 @@
     "moduleDetection": "force",
     "noEmit": true,
     "jsx": "react-jsx",
-
+    "types": [
+      "jest", 
+      "@testing-library/jest-dom",
+      "mocha",
+      "webdriverio", 
+      "@wdio/globals",
+      "@wdio/types"
+    ],
     /* Linting */
     "strict": true,
     "noUnusedLocals": false, // Вимикає помилки для невикористаних локальних змінних
@@ -23,5 +30,12 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src"]
+  "include": [
+    "tests/**/*.ts",
+    "wdio.conf.ts",
+    "src",
+    "__test__",
+    "images.d.ts",
+    "src/**/*.d.ts"  // Убедись, что .d.ts файлы включены
+  ]
 }

@@ -9,6 +9,7 @@ export const authService = {
         password: string,
         email: string,
         phone: string,
+        role: string
     ) { 
         
         const passwordSalt = await bcrypt.genSalt(10);
@@ -19,7 +20,8 @@ export const authService = {
             name,
             password: passwordHash,
             email,
-            phone
+            phone,
+            role
         };
         
         try {

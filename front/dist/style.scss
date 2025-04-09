@@ -1,3 +1,4 @@
-#root{
-    background-color: darkblue;
-}
+@import '../src/common/index.scss';
+@import '../src/components/Header/index.scss';
+@import '../src/Pages/Home/index.scss';
+@import '../src/Pages/Login/index.scss';

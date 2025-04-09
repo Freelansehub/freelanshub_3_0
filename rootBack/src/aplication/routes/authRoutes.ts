@@ -5,17 +5,18 @@ import { userRepository } from '../../repositories/userRepository';
 
 const router = Router();
 
-router.post('/registr', async (req: Request, res: Response) => {
+router.post('/register', async (req: Request, res: Response) => {
     console.log(req.headers.authorization)
     try {
         const user = await authService.createUser(
             req.body.name, 
             req.body.password,
             req.body.email,
-            req.body.phone
+            req.body.phone,
+            req.body.role
         );
         if (user){
-            const token = jwtService.createJWT(user)
+            const token = await jwtService.createJWT(user)
             res.status(201).json({
                 resultcode: 0,
                 data:{
