@@ -27,8 +27,8 @@ export default function Header({ ...props }: HeaderPropsType): React.ReactElemen
                     </ul>
 
                     <div className="text-end">
-                        <button type="button" onClick={()=>{navigate('/login')}} className="btn btn-outline-light me-2">Login</button>
-                        <button type="button" className="btn btn-warning">Sign-up</button>
+                        <button type="button" onClick={()=>{navigate('/login')}} className="btn btn-outline-light me-2">Увійти</button>
+                        <button type="button" className="btn btn-warning">Зареєструватися</button>
                     </div>
                 </div>
             </div>

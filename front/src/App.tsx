@@ -5,6 +5,7 @@ import LayoutContainer from './Layout/LayoutContainer';
 import HomeContainer from './Pages/Home/HomeContainer';
 import LoginContainer from './Pages/Login/LoginContainer';
 import PrivacyPolicy from './Pages/PrivacyPolicy/PrivacyPolicy';
+import KabinetClient from './Pages/KabinetClient/KabinetClient';
 
 const App: React.FC = () => {
   return (
@@ -12,7 +13,7 @@ const App: React.FC = () => {
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/login" element={<LoginContainer />} />
       <Route path="/" element={<LayoutContainer />}>
-      <Route path='/kabinet-client' element={<HomeContainer />} />
+      <Route path='/kabinet-client' element={<KabinetClient />} />
         <Route index element={<HomeContainer />} />
       </Route>
     </Routes>
