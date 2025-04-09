@@ -1,8 +1,19 @@
 import { ReducerActionsType } from "../../store/rootReducer";
-const SET_USER = "USER/SET_USER" as const;
+import { UserType } from "./userReducer";
+
+export const USER_SET_REQUEST = 'USER/SET_REQUEST' as const;
+export const USER_SET_SUCCESS = 'USER/SET_SUCCESS' as const;
+
+export const USER_UNSET = 'USER/UNSET' as const;
+
+export const USER_SET_COURESES_REQUEST = 'USER/SET_COURESES_REQUEST' as const;
+export const USER_SET_COURESES_SUCCESS = 'USER/SET_COURESES_SUCCESS' as const;
 
 const userActions = {
-    setUser: () => ({type: SET_USER})
+    setUserRequest: () => ({ type: USER_SET_REQUEST }),
+    setUserSuccess: (user: UserType) => ({ type: USER_SET_SUCCESS, user }),
+
+    unsetUser: () => ({ type: USER_UNSET }),
 }
 
 export default userActions;

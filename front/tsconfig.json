@@ -3,5 +3,25 @@
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
+  ],
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react-jsx", // или "react", если используешь старую версию React (<17)
+    "types": [
+      "jest", 
+      "@testing-library/jest-dom",
+      "mocha",
+      "webdriverio", 
+      "@wdio/globals",
+      "@wdio/types"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx",
+    "src/**/*.test.js",
+    "src/**/*.test.jsx",
   ]
 }

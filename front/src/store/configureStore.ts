@@ -10,9 +10,28 @@ const sagaMiddleware = createSagaMiddleware();
 
 const middleware = [sagaMiddleware, thunk as ThunkMiddleware<RootState, AllReduxActions>];
 
+export const defaultInitialState: RootState = {
+  auth: { 
+    token:"", 
+    isAuth: false, 
+    isLoading: false 
+  },
+  user : { 
+    user: null, 
+    isFatcing: false 
+  },
+  error:{
+    errorAuth: [],
+    errorUser: [],
+    errorCours: [],
+    errorHomework: [],
+}
+  // Пример для других редьюсеров
+};
 
 const store = createStore(
   rootReducer,
+  defaultInitialState,
   composeEnhancers(applyMiddleware(...middleware))
 );
 

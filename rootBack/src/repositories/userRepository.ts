@@ -23,7 +23,7 @@ export class userRepository {
 
     // Знайти користувача за ім'ям або email
     static async findUserByNameOrEmail(nameOrEmail: string): Promise<UserDbType | null> {
-        const query = `SELECT id, name, email, password, phone FROM users WHERE name = ? OR email = ?`;
+        const query = `SELECT id, name, email, password, phone FROM user WHERE name = ? OR email = ?`;
         try {
             const connection = await db.getConnection();
             // Виконуємо запит до бази
@@ -38,7 +38,7 @@ export class userRepository {
 
     // Знайти користувача за ID
     static async findUserById(userId: string): Promise<UserDbType | null> {
-        const query = `SELECT id, name, email, password, phone FROM users WHERE id = ?`;
+        const query = `SELECT id, name, email, password, phone FROM user WHERE id = ?`;
         try {
             const connection = await db.getConnection();
             const [rows] = await connection.query<UserDbType[]>(query, [userId]);
@@ -51,7 +51,7 @@ export class userRepository {
 
     // Знайти користувачів за списком ID
     static async findUsersByIds(userIds: string[]): Promise<UserDbType[]> {
-        const query = `SELECT id, name, email, password, phone FROM users WHERE id IN (?)`;
+        const query = `SELECT id, name, email, password, phone FROM user WHERE id IN (?)`;
         try {
             const connection = await db.getConnection();
             const [rows] = await connection.query<UserDbType[]>(query, [userIds]);

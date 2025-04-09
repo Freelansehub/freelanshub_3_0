@@ -1,3 +1,3 @@
 export function* watchErrorSagas() {
-    yield console.log('');
+    yield console.log('watchErrorSagas');
   }

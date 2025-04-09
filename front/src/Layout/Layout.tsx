@@ -6,7 +6,7 @@ export default function Layout(): React.ReactElement {
   return (
     <>
       <HeaderContainer className="header"/>
-      <main className="content">
+      <main data-testid='main-container' className="content">
         <Outlet />
       </main>
     </>

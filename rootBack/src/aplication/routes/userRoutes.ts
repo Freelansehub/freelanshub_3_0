@@ -7,27 +7,24 @@ import { UserDbType } from '../../repositories/userRepository';
 const router = Router();
 
 
+
 router.get('/', async (req: Request, res: Response) => {
     try {
-        // if (req.user) {
-        //     res.status(200).send({
-        //         data:{
-        //             _id: req.user._id,
-        //             name: req.user.name,
-        //             email: req.user.email,
-        //             phone: req.user.phone,
-        //             role: req.user.role,
-        //             specialization: req.user.specialization,
-        //             position: req.user.position
-        //         },
-        //         resultCode: 0,
-        //         errors: []
-        //     })
-        // }
-
-        res.send({
-            masseg: "conect"
-        })
+        if (req.user) {
+            res.status(200).send({
+                data:{
+                    _id: req.user._id,
+                    name: req.user.name,
+                    email: req.user.email,
+                    phone: req.user.phone,
+                    role: req.user.role,
+                    specialization: req.user.specialization,
+                    position: req.user.position
+                },
+                resultCode: 0,
+                errors: []
+            })
+        }
     }
     catch (error) {
         res.status(403).send({
