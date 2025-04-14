@@ -3,12 +3,17 @@ import { Routes, Route } from 'react-router-dom';
 
 import LayoutContainer from './Layout/LayoutContainer';
 import HomeContainer from './Pages/Home/HomeContainer';
-import LoginContainer from './Pages/Login/LoginContainer';
+import AuthLayout from './Pages/Auth/AuthLayout';
+import LoginContainer from './Pages/Auth/Login/LoginContainer';
+import Register from './Pages/Auth/Register/Register';
 
 const App: React.FC = () => {
   return (
     <Routes>
-      <Route path="/login" element={<LoginContainer />} />
+      <Route path="/auth" element={<AuthLayout />} > 
+        <Route path="login"  element={<LoginContainer />} />
+        <Route path="register" element={<Register />} />
+      </Route>
       <Route path="/" element={<LayoutContainer />}>
         <Route index element={<HomeContainer />} />
       </Route>

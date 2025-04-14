@@ -10,11 +10,20 @@ export const AUTH_REGISTER_REQUEST = 'AUTH/REGISTER_REQUEST' as const;
 export const AUTH_REGISTER_SUCCESS = 'AUTH/REGISTER_SUCCESS' as const;
 
 const authActions = {
-    loginRequest: (email: string, password: string) => ({ type: AUTH_LOGIN_REQUEST, email, password }),
+    loginRequest: (data:{
+        email: string, 
+        password: string,
+    }) => ({ type: AUTH_LOGIN_REQUEST, payload:{...data } }),
     loginSuccess: (token: string) => ({ type: AUTH_LOGIN_SUCCESS, token }),
 
-    registerRequest: (name: string, email: string, password: string, phone:string, role: RoleType ) => 
-        ({ type: AUTH_REGISTER_REQUEST, name, email, password, phone, role }),
+    registerRequest: (data:{
+        name:string,
+        email: string,
+        password: string, 
+        phone:string,
+        role:RoleType 
+    }  ) => 
+        ({ type: AUTH_REGISTER_REQUEST, payload:{...data }}),
     registerSuccess: (token: string) => 
         ({ type: AUTH_REGISTER_SUCCESS, token}),
     

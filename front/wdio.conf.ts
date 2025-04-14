@@ -133,6 +133,7 @@ export const config: WebdriverIO.Config = {
         ui: 'bdd',
         timeout: 60000
     },
+    baseUrl: process.env.BASE_URL || 'http://localhost:5173',
 
     //
     // =====

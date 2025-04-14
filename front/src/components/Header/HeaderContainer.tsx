@@ -3,9 +3,6 @@ import Header from "./Header";
 import { compose } from "redux";
 import { HTMLAttributes } from "react";
 
-export type HeaderPropsType = HTMLAttributes<HTMLElement> & {
-};
-
 export type HeaderContainerPropsType = HTMLAttributes<HTMLElement> & {
     
 };
@@ -20,7 +17,34 @@ export type ReduxPropsType = ConnectedProps<typeof connector>;
 
 const HeaderContainer = ({...props}: HeaderContainerPropsType & ReduxPropsType)=>{
 
+    const headerMenu = [
+        {
+            name: 'client',
+            headerDropMenu: [
+                {
+                    url: '/client',
+                    title: 'Замовникам',
+                    description: 'Оформити замовлення',
+                    icon: '/images/icons/client.svg'
+                },
+                {
+                    url: '/frilans',
+                    title: 'Фрілансерам',
+                    description: 'Оформити замовлення',
+                    icon: '/images/icons/frilans.svg'
+                },
+                {
+                    url: '/vacancy',
+                    title: 'Вакансії',
+                    description: 'Оформити замовлення',
+                    icon: '/images/icons/vacancy.svg'
+                }
+            ]
+        }
+    ]
+
     return <Header
+    headerMenu={headerMenu}
     />
 }
 

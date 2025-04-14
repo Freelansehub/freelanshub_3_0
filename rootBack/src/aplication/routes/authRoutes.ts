@@ -10,8 +10,8 @@ router.post('/register', async (req: Request, res: Response) => {
     try {
         const user = await authService.createUser(
             req.body.name, 
-            req.body.password,
             req.body.email,
+            req.body.password,
             req.body.phone,
             req.body.role
         );

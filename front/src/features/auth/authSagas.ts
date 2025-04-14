@@ -3,7 +3,6 @@ import actions, { AUTH_LOGIN_REQUEST, AUTH_REGISTER_REQUEST } from "./authAction
 import { AuthApi, AuthDataType } from "./authApi";
 import { handleRequest } from "../../utils/saga";
 import { ERROR_AUTH_SET } from "../error/errorActions";
-import userActions from "../user/userActions";
 
 export function* watchAuthSagas() {
   yield all([fork(loginWatchSaga), fork(registerWatchSaga)]);
@@ -16,7 +15,7 @@ function* loginWatchSaga() {
 function* loginWorkerSaga(action: ReturnType<typeof actions.loginRequest>) {
   try{
     const response: AuthDataType = yield call
-    (handleRequest<typeof AuthApi.login>, AuthApi.login, ERROR_AUTH_SET, action.email, action.password);
+    (handleRequest<typeof AuthApi.login>, AuthApi.login, ERROR_AUTH_SET, action.payload.email, action.payload.password);
     localStorage.setItem('token', response.token);
     yield put(actions.loginSuccess(response.token));
   }
@@ -33,7 +32,7 @@ function* registerWorkerSaga(action: ReturnType<typeof actions.registerRequest>)
   try{
     console.log('action', action)
     const response: AuthDataType = yield call
-    (handleRequest<typeof AuthApi.reg>, AuthApi.reg, ERROR_AUTH_SET, action.name, action.email, action.password, action.phone, action.role);
+    (handleRequest<typeof AuthApi.reg>, AuthApi.reg, ERROR_AUTH_SET, action.payload.name, action.payload.email, action.payload.password, action.payload.phone, action.payload.role);
     yield put(actions.registerSuccess(response.token));
   }
   catch (error) {

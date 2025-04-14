@@ -16,8 +16,8 @@ export const AuthApi = {
         try {
             const response = await instance.post<ApiResponse<AuthDataType>>("auth/register", {
                 name,
-                password,
                 email,
+                password,
                 phone,
                 role,
             });
