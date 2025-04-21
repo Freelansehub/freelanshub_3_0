@@ -1,4 +1,4 @@
-import { ReducerActionsType } from "../../store/rootReducer";
+import { ReducerActionsType } from "../../redux/rootReducer";
 import { UserType } from "./userReducer";
 
 export const USER_SET_REQUEST = 'USER/SET_REQUEST' as const;

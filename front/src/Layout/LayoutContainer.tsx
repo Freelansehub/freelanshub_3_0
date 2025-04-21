@@ -1,7 +1,7 @@
 import { connect, ConnectedProps } from "react-redux";
 import Layout from "./Layout";
 import { compose } from "redux";
-import { RootState } from "../store/rootReducer";
+import { RootState } from "../redux/rootReducer";
 
 const LayoutContainer = (props: ReduxPropsType) => {
     

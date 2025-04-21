@@ -14,8 +14,6 @@
     "test": "jest --detectOpenHandles"
   },
   "dependencies": {
-    "@types/cookie-parser": "^1.4.8",
-    "@types/express-validator": "^2.20.33",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
@@ -29,6 +27,8 @@
     "ts-jest": "^29.3.0"
   },
   "devDependencies": {
+    "@types/cookie-parser": "^1.4.8",
+    "@types/express-validator": "^2.20.33",
     "@types/bcryptjs": "^2.4.6",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",

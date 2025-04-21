@@ -3,6 +3,7 @@ import thunk, { ThunkMiddleware } from 'redux-thunk';
 import { rootReducer, AllReduxActions, RootState } from './rootReducer';
 import createSagaMiddleware from 'redux-saga';
 import rootSaga from './rootSaga';
+import { createAction } from '@reduxjs/toolkit';
 
 const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -28,7 +29,6 @@ export const defaultInitialState: RootState = {
 }
   // Пример для других редьюсеров
 };
-
 const store = createStore(
   rootReducer,
   defaultInitialState,

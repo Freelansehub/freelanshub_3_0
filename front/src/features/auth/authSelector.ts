@@ -1,4 +1,4 @@
-import { RootState } from "../../store/rootReducer";
+import { RootState } from "../../redux/rootReducer";
 
 export const authSelectors = {
     getIsAuth: (state: RootState) => state.auth.isAuth,

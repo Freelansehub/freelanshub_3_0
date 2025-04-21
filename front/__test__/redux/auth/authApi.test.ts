@@ -1,6 +1,6 @@
 import { AuthApi } from "../../../src/features/auth/authApi";
 import { RoleType } from "../../../src/features/user/userReducer";
-import { ResultCodeEnum } from "../../../src/store/configureApi";
+import { ResultCodeEnum } from "../../../src/redux/configureApi";
 
 // 👇 Мокаем методы AuthApi
 jest.mock("../../../src/features/auth/authApi", () => ({

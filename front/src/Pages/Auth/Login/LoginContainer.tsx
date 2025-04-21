@@ -3,7 +3,7 @@ import Login from "./Login";
 import { FormEvent, HTMLAttributes, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { compose } from "redux";
-import { RootState } from "../../../store/rootReducer";
+import { RootState } from "../../../redux/rootReducer";
 import authActions from "../../../features/auth/authActions";
 import { RoleType } from "../../../features/user/userReducer";
 import { authSelectors } from "../../../features/auth/authSelector";

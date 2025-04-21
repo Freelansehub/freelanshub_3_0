@@ -1,5 +1,5 @@
 import { call, put } from "redux-saga/effects";
-import { ResultCodeEnum } from "../store/configureApi";
+import { ResultCodeEnum } from "../redux/configureApi";
  
 
 

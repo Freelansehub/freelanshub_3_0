@@ -2,7 +2,7 @@
 
 import { connect, ConnectedProps } from "react-redux";
 import AuthForm from "../../../components/Auth/AuthForm";
-import { RootState } from "../../../store/rootReducer";
+import { RootState } from "../../../redux/rootReducer";
 import { LoginContainerProps } from "./LoginContainer";
 import { compose } from "redux";
 import authActions from "../../../features/auth/authActions";

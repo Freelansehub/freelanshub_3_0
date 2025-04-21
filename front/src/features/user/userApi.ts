@@ -1,4 +1,4 @@
-import { ApiResponse, instance } from "../../store/configureApi";
+import { ApiResponse, instance } from "../../redux/configureApi";
 import { UserType } from "./userReducer";
 
 export const UserApi = {

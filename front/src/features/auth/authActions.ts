@@ -1,4 +1,4 @@
-import { ReducerActionsType } from "../../store/rootReducer";
+import { ReducerActionsType } from "../../redux/rootReducer";
 import { RoleType } from "../user/userReducer";
 
 export const AUTH_LOGIN_REQUEST = 'AUTH/LOGIN_REQUEST' as const;

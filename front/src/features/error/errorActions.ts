@@ -1,4 +1,4 @@
-import { ReducerActionsType } from "../../store/rootReducer";
+import { ReducerActionsType } from "../../redux/rootReducer";
 
 export const ERROR_AUTH_SET = 'ERROR/AUTH_SET' as const;
 export const ERROR_USER_SET = 'ERROR/USER_SET' as const;

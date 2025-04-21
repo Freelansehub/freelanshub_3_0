@@ -1,4 +1,4 @@
-import { ApiResponse, instance } from "../../store/configureApi";
+import { ApiResponse, instance } from "../../redux/configureApi";
 import { RoleType } from "../user/userReducer";
 
 export type AuthDataType = {
