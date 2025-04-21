@@ -1,8 +1,8 @@
-import fs from 'fs';
-import mysql from 'mysql2/promise';
-import { params } from '../params';
 
-const db = mysql.createPool({
+import mysql from 'mysql2/promise';
+import { params } from '../config/params';
+
+const pool = mysql.createPool({
     host: params.DB_HOST,
     user: params.DB_USER,
     password: params.DB_PASS,
@@ -14,15 +14,16 @@ const db = mysql.createPool({
 
 });
 
+
 export const connectDB = async () => {
     try {
-        const connection = await db.getConnection();
+        const connection = await pool.getConnection();
         console.log('✅ Підключено до бази даних!');
         connection.release();
     } catch (error) {
         console.error('❌ Помилка підключення до бази даних:', error);
-        process.exit(1); // Завершити процес при помилці підключення
+        process.exit(1); 
     }
 };
 
-export default db;
+export default pool;

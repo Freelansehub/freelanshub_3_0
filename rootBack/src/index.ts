@@ -1,16 +1,47 @@
-
 import { app } from './app';
-import { params } from './params';
+import { params } from './config/params';
 import { connectDB } from './repositories/db';
+import refreshTokenRepository from './repositories/refreshTokenRepository';
+import { throwError } from './utils/error';
 
-
-// Підключення до бази даних перед стартом сервера
 const startServer = async () => {
-    await connectDB();
+    try {
+        // Підключаємося до бази даних
+        await connectDB();
 
-    app.listen(5000, () => {
-        console.log(`🚀 Сервер працює на http://localhost:${5000}`);
-    });
+        // Запускаємо сервер
+        app.listen(params.PORT, () => {
+            console.log(`🚀 Сервер працює на http://localhost:${params.PORT}`);
+        });
+
+        // Періодичне очищення застарілих refresh токенів
+        setInterval(async () => {
+            try {
+                const deletedCount = await refreshTokenRepository.clearExpires();
+                if (deletedCount) {
+                    console.log(`[refreshCleaner] Удалено ${deletedCount} протухших токенов`);
+                }
+            } catch (err) {
+                // Універсальна обробка помилок при очищенні
+                throwError({
+                    status: 500,
+                    className: 'startServer',
+                    functionName: 'setInterval',
+                    message: 'Ошибка при очистке refresh токенов',
+                    previousError: err
+                });
+            }
+        }, 1000 * 60 * 60); // кожну годину
+    } catch (err) {
+        // Обробка помилок під час старту сервера
+        throwError({
+            status: 500,
+            className: 'startServer',
+            functionName: 'startServer',
+            message: 'Ошибка при запуске сервера',
+            previousError: err
+        });
+    }
 };
 
 startServer();
