@@ -4,14 +4,10 @@ import cors, { CorsOptions } from 'cors';
 import cookieParser from 'cookie-parser';
 import userRoutes from './application/user/userRoutes';
 import authRoutes from './application/auth/authRoutes';
+import { params } from './config/params';
 const app = express();
 
-const origins = [
-  'http://localhost:5173', 
-  'http://localhost:4173', 
-  'http://localhost:5174', 
-  'http://localhost:4174', 
-]
+const origins = params.ORIGINS.split(' ')
 
 const corsOptions = {
   origin: origins, // Allow frontend domain
@@ -23,9 +19,9 @@ app.set('trust proxy', true);
 app.use(cookieParser());
 app.use(cors(corsOptions));
 app.use(express.json());
-
+app.use(userRoutes)
 app.use('/user', userRoutes);
-app.use('/auth', authRoutes);
+app.use('/auth', cookieParser(), authRoutes);
 
 export { app };
 

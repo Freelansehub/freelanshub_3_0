@@ -3,7 +3,7 @@ import userReposytory from "../../repositories/userReposytory"
 
 class userController {
     async getUserById(req:Request, res: Response){
-            const userId = req.params.id
+            const userId = req.params.a
             const user = req.user
             res.send(user)
     }

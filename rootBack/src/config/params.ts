@@ -8,5 +8,6 @@ export const params = {
     DB_NAME: process.env.DB_NAME || "nkloqzcz_FreelansHub",
     JWT_REFRESH_SICRET: process.env.JWT_REFRESH_SICRET || 'UltraMegaDuperSkladniPassword',
     JWT_ACCESS_SICRET: process.env.JWT_REFRESH_SICRET || 'UltraMegaSkladniPassword',
-    PORT: Number(process.env.PORT) || 5000
+    PORT: Number(process.env.PORT) || 5000,
+    ORIGINS: process.env.ORIGINS || 'http://localhost:5173 http://localhost:4173 http://localhost:5174 http://localhost:4174', 
 }
